@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sSP-XZ-gFg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="jVN-Ug-Uqa">
+            <objects>
+                <viewController id="sSP-XZ-gFg" customClass="LoginViewController" customModule="canivete" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7CG-Lu-PVs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kph-iK-kod" customClass="LoginButtonsView" customModule="canivete" customModuleProvider="target">
+                                <rect key="frame" x="32" y="384" width="350" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14902088050000001" green="0.14901727440000001" blue="0.14901974800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="v0y-6F-VNu" firstAttribute="trailing" secondItem="kph-iK-kod" secondAttribute="trailing" constant="32" id="1hw-Eg-KGP"/>
+                            <constraint firstItem="kph-iK-kod" firstAttribute="centerX" secondItem="7CG-Lu-PVs" secondAttribute="centerX" id="2Rq-ZJ-Lmx"/>
+                            <constraint firstItem="kph-iK-kod" firstAttribute="leading" secondItem="v0y-6F-VNu" secondAttribute="leading" constant="32" id="6VY-oz-15b"/>
+                            <constraint firstItem="kph-iK-kod" firstAttribute="centerY" secondItem="7CG-Lu-PVs" secondAttribute="centerY" id="EIM-B3-ZSc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v0y-6F-VNu"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButtonsView" destination="kph-iK-kod" id="ycF-Qd-EW3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUj-3H-MWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="-4"/>
+        </scene>
+    </scenes>
+</document>

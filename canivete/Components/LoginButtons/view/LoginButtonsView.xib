@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginButtonsView" customModule="canivete" customModuleProvider="target">
+            <connections>
+                <outlet property="appleButton" destination="45k-vi-JNO" id="2yg-Vs-2KW"/>
+                <outlet property="facebookButton" destination="7by-QW-Eai" id="BUU-jI-Tzq"/>
+                <outlet property="googleButton" destination="wfM-Z1-idV" id="MwB-5D-ZNB"/>
+                <outlet property="stackview" destination="aXS-3z-QsP" id="fGs-AU-uOQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="474" height="259"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="aXS-3z-QsP">
+                    <rect key="frame" x="16" y="16" width="442" height="227"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45k-vi-JNO">
+                            <rect key="frame" x="16" y="8" width="410" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="hgr-vb-MqS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Sign in with Apple">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="pressAppleButton:" destination="-1" eventType="touchUpInside" id="caG-tg-PJh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7by-QW-Eai">
+                            <rect key="frame" x="16" y="89.5" width="410" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="XqS-u1-rXz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                            <state key="normal" title="Login com facebook" image="facebook-icon">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="press:" destination="-1" eventType="touchUpInside" id="uKb-OM-Qbb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfM-Z1-idV">
+                            <rect key="frame" x="16" y="171" width="410" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="BIn-X3-76o"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                            <state key="normal" title="Login com Google   " image="google-icon">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="pressGoogleButton:" destination="-1" eventType="touchUpInside" id="eSD-GY-cv5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aXS-3z-QsP" secondAttribute="bottom" constant="16" id="CQp-3h-frX"/>
+                <constraint firstItem="aXS-3z-QsP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="GI8-1D-Cap"/>
+                <constraint firstAttribute="trailing" secondItem="aXS-3z-QsP" secondAttribute="trailing" constant="16" id="Pxi-ms-LjL"/>
+                <constraint firstItem="aXS-3z-QsP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="h98-fx-jPw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="180" y="199.11971830985917"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="facebook-icon" width="24" height="24"/>
+        <image name="google-icon" width="24" height="24"/>
+    </resources>
+</document>
