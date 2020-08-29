@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 
 protocol LoginManagerComponentDelegate {
-    func didLogin(user: User)
+    func didLogin(user: UserComponentEntity)
     func didLoginFail(error: ResponseError)
 }
 
@@ -24,7 +24,7 @@ final class LoginManagerComponent: NSObject {
     
     public static let shared: LoginManagerComponent = LoginManagerComponent()
     public var delegate: LoginManagerComponentDelegate?
-    public var user: User?
+    public var user: UserComponentEntity?
     
     private init(fbLoginManager: LoginManager = LoginManager()) {
         self.fbLoginManager = fbLoginManager
@@ -50,7 +50,7 @@ extension LoginManagerComponent {
     
     enum LoginResultStatus {
         case canceled
-        case success(user: User)
+        case success(user: UserComponentEntity)
         case fail(error: String)
     }
 }
@@ -58,7 +58,7 @@ extension LoginManagerComponent {
 //  MARK: - FBLoginDelegate GoogleSignInDelegate
 
 extension LoginManagerComponent: FBLoginDelegate, GoogleSignInDelegate {
-    func didLogin(result: Result<User, ResponseError>) {
+    func didLogin(result: Result<UserComponentEntity, ResponseError>) {
         switch result {
         case .success(let user):
             self.delegate?.didLogin(user: user)

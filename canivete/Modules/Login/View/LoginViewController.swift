@@ -14,7 +14,7 @@ protocol LoginViewProtocol {
 }
 
 final class LoginViewController: UIViewController {
-
+    
     @IBOutlet private weak var loginButtonsView: LoginButtonsView!
     private var presenter: LoginPresenterProtocol?
     
@@ -40,7 +40,7 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func performToHome() {
-        FlowController.shared.openHome(view: self)
+        FlowController.shared.openHome(view: self)        
     }
     
     func showError(message: String) {

@@ -17,7 +17,7 @@ protocol FBLoginRequestProtocol {
 }
 
 protocol FBLoginDelegate {
-    func didLogin(result: Result<User, ResponseError>)
+    func didLogin(result: Result<UserComponentEntity, ResponseError>)
 }
 
 //MARK: - Implementation
@@ -65,7 +65,7 @@ final class FBLoginRequest: FBLoginRequestProtocol {
         }
     }
     
-    func getUserInfo(completion: @escaping (Result<User, ResponseError>) -> Void) {
+    func getUserInfo(completion: @escaping (Result<UserComponentEntity, ResponseError>) -> Void) {
         GraphRequest(graphPath: "me", parameters: ["fields": "email, name, picture.type(large)"]).start { (connection, result, error) in
 
             guard let json = result as? [String: Any] else {
@@ -76,7 +76,7 @@ final class FBLoginRequest: FBLoginRequestProtocol {
                 completion(.failure(.errorToParse))
                 return
             }
-            guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+            guard let user = try? JSONDecoder().decode(UserComponentEntity.self, from: data) else {
                 completion(.failure(.errorToParse))
                 return
             }

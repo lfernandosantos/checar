@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Decodable, Encodable {
+struct UserComponentEntity: Decodable, Encodable {
     let name: String
     let email: String?
     let picture: Picture?

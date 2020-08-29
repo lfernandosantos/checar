@@ -8,14 +8,19 @@
 
 import Foundation
 
-final class BaseAPIHeroku {
-    let baseURL: String = "https://checar-service.herokuapp.com/"
-    
-    
-}
-
-extension BaseAPIHeroku {
-    enum endpoint: String {
+final class HerokuAPI {
+    enum Endpoint: String {
         case user = "user/"
+        
+        private var baseURL: String {
+            return "https://checar-service.herokuapp.com/"
+        }
+        
+        var url: String {
+            switch self {
+            case .user:
+                return baseURL + self.rawValue
+            }
+        }
     }
 }

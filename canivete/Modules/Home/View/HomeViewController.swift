@@ -13,7 +13,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let user = DatabaseService.shared.getUser()
-        let urlImage = URL(string: user!.picture!.data!.url!)!
+        let urlImage = user!.profileImageURL!
         self.setProfilePicture(urlImage)
     }
 
@@ -49,6 +49,15 @@ final class HomeViewController: UIViewController {
                 completion(image)
             }
         }
+    }
+    @IBAction func addCar(_ sender: Any) {
+//        FlowController.shared.openCar()
+        
+        let searchview = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        let nav = UINavigationController(rootViewController: searchview)
+        nav.modalPresentationStyle = .fullScreen
+        self.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
     }
 }
 

@@ -14,7 +14,7 @@ protocol GoogleSignInRequestProtocol {
 }
 
 protocol GoogleSignInDelegate {
-    func didLogin(result: Result<User, ResponseError>)
+    func didLogin(result: Result<UserComponentEntity, ResponseError>)
 }
 
 final class GoogleSignInRequest: NSObject, GoogleSignInRequestProtocol {

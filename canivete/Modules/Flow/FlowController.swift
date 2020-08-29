@@ -13,6 +13,7 @@ final class FlowController {
     static let shared: FlowController = FlowController()
     
     private var homeStoryBoard: UIStoryboard? = UIStoryboard(name: StoryBoardsName.home.rawValue, bundle: nil)
+    private var carStoryBoard: UIStoryboard? = UIStoryboard(name: StoryBoardsName.car.rawValue, bundle: nil)
     private var homeNavigation: UINavigationController?
     
     private init() { }
@@ -26,11 +27,17 @@ final class FlowController {
         homeNavigation.modalPresentationStyle = .fullScreen
         view.present(homeNavigation, animated: true, completion: nil)
     }
+    
+    func openCar() {
+        guard let createCardViewController = self.carStoryBoard?.instantiateViewController(withIdentifier: "CarForm") else { return }
+        self.homeNavigation?.present(createCardViewController, animated: true, completion: nil)
+    }
 }
 
 private extension FlowController {
     enum StoryBoardsName: String {
         case home = "Home"
         case login = "Login"
+        case car = "car"
     }
 }

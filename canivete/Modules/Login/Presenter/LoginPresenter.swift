@@ -24,24 +24,28 @@ final class LoginPresenter: LoginPresenterProtocol {
     }
     
     func viewDidLoad() {
-        let user = UserRequest(name: "Fernando Santos 123", email: "email.com")
-        let dataBody = try? JSONEncoder().encode(user)
-        print(String(data: dataBody!, encoding: .ascii)!)
+    }
+    
+    private func loginUserAPI(user: UserComponentEntity) {
+        guard let email = user.email else { return }
+        let userRequest = UserRequest(id: nil,name: user.name, email: email)
         
-        let url = URL(string: "https://checar-service.herokuapp.com/user")!
-        let urlRequest = BaseURLRequest(url: url, method: .post, header: [.contentType], body: dataBody)
-        BaseHTTPService().createRequest(urlRequest) { (data, error) in
-            print("terminou" )
+        LoginAPI().login(with: userRequest) { [weak self] (data, error) in
+            guard let id = data?.id ,
+                let email = user.email,
+                let profile = user.picture?.data?.url else { return }
+            let userToSave = User(id: id, name: user.name, email: email, profileImageURL: URL(string: profile))
+            DatabaseService.shared.setUser(user: userToSave)
+            self?.view?.performToHome()
         }
     }
 }
 
 // MARK: - LoginManagerComponent Delegate
 extension LoginPresenter {
-    func didLogin(user: User) {
-        print(user)
-        DatabaseService.shared.setUser(user: user)
-        self.view?.performToHome()
+    func didLogin(user: UserComponentEntity) {
+        self.loginUserAPI(user: user)
+        
     }
     
     func didLoginFail(error: ResponseError) {

@@ -10,8 +10,8 @@ import Foundation
 
 struct BaseURLRequest {
     var url: URL
-    var method: BaseHTTPService.HTTPMethod
-    var header: [BaseHTTPService.HTTPHeader]
+    var method: BaseHTTPService.HTTPMethod = .get
+    var header: [BaseHTTPService.HTTPHeader] = [.contentType]
     var body: Data? = nil
 }
 
@@ -24,18 +24,22 @@ final class BaseHTTPService {
         
         let urlRequest = self.getURLRequest(with: baseURLRequest)
         let task = session.dataTask(with: urlRequest) { (data, response, error)  in
-            if let error = error {
-                print(error.localizedDescription)
+            DispatchQueue.main.async {
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+                guard let data = data, error == nil else {
+                    completion(nil, ResponseError.unknown(reasons: [error?.localizedDescription ?? ""]))
+                    return
+                }
+                completion(data, nil)
             }
             
-            guard let data = data, error == nil else {
-                completion(nil, ResponseError.unknown(reasons: [error?.localizedDescription ?? ""]))
-                return
-            }
-            print(String(data: data, encoding: .ascii))
-            completion(data, nil)
         }
-        task.resume()
+        DispatchQueue.global(qos: .background).async {
+            task.resume()
+        }
     }
     
     private func getURLRequest(with base: BaseURLRequest) -> URLRequest {
