@@ -39,6 +39,11 @@
 		0866AF4724F35E930095C52A /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866AF4624F35E930095C52A /* LoginAPI.swift */; };
 		0884EF0224F36C0900BEC9E0 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0884EF0124F36C0900BEC9E0 /* AuthenticationManager.swift */; };
 		08DB09FB24E9968600F9686B /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB09FA24E9968600F9686B /* FlowController.swift */; };
+		ED278CAB252101C3000469BB /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED278CA9252101C3000469BB /* UserViewController.swift */; };
+		ED278CAC252101C3000469BB /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED278CAA252101C3000469BB /* UserViewController.xib */; };
+		ED278CB0252104A8000469BB /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED278CAF252104A8000469BB /* ProfileHeaderView.swift */; };
+		ED278CB3252104C7000469BB /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED278CB2252104C7000469BB /* ProfileHeaderView.xib */; };
+		ED278CB625211C58000469BB /* ProfileTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED278CB525211C58000469BB /* ProfileTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +78,11 @@
 		0866AF4624F35E930095C52A /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		0884EF0124F36C0900BEC9E0 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		08DB09FA24E9968600F9686B /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		ED278CA9252101C3000469BB /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		ED278CAA252101C3000469BB /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		ED278CAF252104A8000469BB /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		ED278CB2252104C7000469BB /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		ED278CB525211C58000469BB /* ProfileTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +223,7 @@
 		083C4D3124E75ECB0056D342 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ED278CA82520F4D1000469BB /* User */,
 				081BD93424F74591000A1A94 /* Search */,
 				081BD93024F737FB000A1A94 /* Car */,
 				08BFB89D24E8D8B4008925B2 /* Flow */,
@@ -334,6 +345,18 @@
 			path = Flow;
 			sourceTree = "<group>";
 		};
+		ED278CA82520F4D1000469BB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				ED278CA9252101C3000469BB /* UserViewController.swift */,
+				ED278CAA252101C3000469BB /* UserViewController.xib */,
+				ED278CAF252104A8000469BB /* ProfileHeaderView.swift */,
+				ED278CB2252104C7000469BB /* ProfileHeaderView.xib */,
+				ED278CB525211C58000469BB /* ProfileTableViewDataSource.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -405,7 +428,9 @@
 				083C4D2824E75E850056D342 /* LaunchScreen.storyboard in Resources */,
 				083C4D2524E75E850056D342 /* Assets.xcassets in Resources */,
 				083C4D2324E75E840056D342 /* Home.storyboard in Resources */,
+				ED278CAC252101C3000469BB /* UserViewController.xib in Resources */,
 				081BD93324F738C7000A1A94 /* car.storyboard in Resources */,
+				ED278CB3252104C7000469BB /* ProfileHeaderView.xib in Resources */,
 				081BD93924F745B2000A1A94 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,11 +445,13 @@
 				085F17E724E8C2FA00EF4158 /* UserLoginComponent.swift in Sources */,
 				085F17E124E8BDC500EF4158 /* LoginViewController.swift in Sources */,
 				083C4D4B24E75FBD0056D342 /* LoginButtonsView.swift in Sources */,
+				ED278CB625211C58000469BB /* ProfileTableViewDataSource.swift in Sources */,
 				081847E424EB73F10092622E /* BaseAPIHeroku.swift in Sources */,
 				081847E624EB7B9E0092622E /* UserRequest.swift in Sources */,
 				083C4D2024E75E840056D342 /* HomeViewController.swift in Sources */,
 				083C4D4A24E75FBD0056D342 /* LoginButtonProtocol.swift in Sources */,
 				081847E224EB73CF0092622E /* BaseHTTPService.swift in Sources */,
+				ED278CB0252104A8000469BB /* ProfileHeaderView.swift in Sources */,
 				083C4D4824E75FBD0056D342 /* FBLoginRequest.swift in Sources */,
 				0884EF0224F36C0900BEC9E0 /* AuthenticationManager.swift in Sources */,
 				081847DE24E9B8210092622E /* DatabaseService.swift in Sources */,
@@ -437,6 +464,7 @@
 				0866AF4724F35E930095C52A /* LoginAPI.swift in Sources */,
 				083C4D4D24E75FBD0056D342 /* LoginManagerComponent.swift in Sources */,
 				083C4D1C24E75E840056D342 /* AppDelegate.swift in Sources */,
+				ED278CAB252101C3000469BB /* UserViewController.swift in Sources */,
 				083C4D5124E7627D0056D342 /* UserComponentEntity.swift in Sources */,
 				083C4D1E24E75E840056D342 /* SceneDelegate.swift in Sources */,
 			);
